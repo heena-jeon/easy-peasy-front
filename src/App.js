@@ -1,15 +1,16 @@
 import React from 'react';
+import routes from './routes/routes';
 import {
   Header,
-  Main,
   Footer,
 } from './layouts';
+
 
 function App() {
   return (
     <>
       <Header />
-      <Main />
+      {routes}
       <Footer />
     </>
   );
