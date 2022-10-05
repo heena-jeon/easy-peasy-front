@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/styles/carousel.css';
 
 const Home = () => {
   return (

@@ -5,7 +5,6 @@ import {
   Footer,
 } from './layouts';
 
-
 function App() {
   return (
     <>
