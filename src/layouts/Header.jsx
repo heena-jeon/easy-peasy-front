@@ -28,10 +28,10 @@ const Header = () => {
                 <Link className="nav-link" to="/about">About</Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <div className="text-end">
+              <button type="button" className="btn btn-outline-light me-2">Login</button>
+              <button type="button" className="btn btn-warning">Sign-up</button>
+            </div>
           </div>
         </div>
       </nav>
