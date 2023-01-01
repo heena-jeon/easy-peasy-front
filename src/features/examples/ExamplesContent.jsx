@@ -1,11 +1,8 @@
-import ReactDatePicker from './reactLib/ReactDatePicker';
 
 const ExamplesContent = () => {
   return (
-    <div className="w-100 bg-dark">
-      <div style={{"margin": "100px"}}>
-        <ReactDatePicker/>
-      </div>
+    <div>
+      다양한 예제를 확인할 수 있습니다.
     </div>
   )
 };

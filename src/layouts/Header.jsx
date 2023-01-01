@@ -1,41 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  Button,
+  ButtonGroup,
+  Container,
+  Nav,
+  Navbar,
+  NavDropdown,
+  Offcanvas,
+} from 'react-bootstrap';
 
 const Header = () => {
   return (
-    <header>
-      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div className="container-fluid">
-          <Link className="navbar-brand">Easy Peasy</Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav me-auto mb-2 mb-md-0">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/courses">Courses</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/examples">Examples</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/qna">QnA</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">About</Link>
-              </li>
-            </ul>
-            <div className="text-end">
-              <button type="button" className="btn btn-outline-light me-2">Login</button>
-              <button type="button" className="btn btn-warning">Sign-up</button>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <Navbar bg="dark" variant="dark" expand="lg" className="mb-3">
+      <Container fluid>
+        <Navbar.Brand href="/">Easy Peasy</Navbar.Brand>
+        <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
+        <Navbar.Offcanvas id="offcanvasNavbar-expand-lg" aria-labelledby="offcanvasNavbarLabel-expand-lg" placement="end">
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title id="offcanvasNavbarLabel-expand-lg">
+              Easy Peasy
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>            
+            <Nav className="justify-content-end flex-glow-1 pe-3">
+              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/courses">Couses</Nav.Link>
+              <NavDropdown title="Examples" id="offcanvasNavbarDropdown-expand-lg">
+                <NavDropdown.Item href="/examples">ALL</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/examples/html">HTML</NavDropdown.Item>
+                <NavDropdown.Item href="/examples/css">CSS</NavDropdown.Item>
+                <NavDropdown.Item href="/examples/javascript">Javascript</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/examples/react">React</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="/qna">QnA</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+            </Nav>
+            <ButtonGroup>
+              <Button variant="warning">Login</Button>
+              <Button variant="outline-warning">Join</Button>
+            </ButtonGroup>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
+      </Container>
+    </Navbar>
   );
 };
 
